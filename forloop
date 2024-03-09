@@ -1,0 +1,33 @@
+#!/bin/bash
+
+#for loop
+
+#for oma in money softlife payjob iphone15pro 
+#do 
+#	echo "Things oma loves: $oma"
+#sleep 2
+
+#done
+
+#echo "Oma personal interest is currently exhausted"
+
+#for seyi in {1..7}
+#do 
+#	echo "Seyi favourite numbers are: $seyi"
+#sleep 3
+#done
+
+#echo "end of seyi lucky numbers"
+
+
+for file in log_complain/*.log
+do
+#	tar -czvf $file.tar.gz $file
+	mail -s "Errors logs file" -A /home/vagrant/bash/log_complain/*.tar.gz hoolicontech@gmail.com
+done
+echo "Mail sent to hoolicontech@gmail.com"
+
+
+
+
+

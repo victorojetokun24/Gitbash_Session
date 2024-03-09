@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+dir=oma
+
+if [ -d $dir ]
+then
+	echo $dir
+	echo "The folder $dir exist.."
+	echo "The exist code is $?"
+else
+	echo $dir
+	echo "The folder $dir does not exist......"
+	echo "The exist code is $?"
+fi
+

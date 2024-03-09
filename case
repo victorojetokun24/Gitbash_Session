@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#case statement
+unknown=0
+while [ $unknown -ne 1 ]
+
+do
+
+echo "Victoria what are the Career role you would want to emback in the Tech industry ?"
+
+echo "1 - Cloud Engineer"
+echo "2 - Developer Advocate Role"
+echo "3 - Technical Speaker"
+echo "4 - Technical writer/Editor"
+echo "5 - Something Unknown....."
+echo "6 - Terminate the running script"
+
+read role;
+
+case $role in
+
+1) echo "Cloud Engineering is a professional career with problem solving skills";;
+2) echo "Developer advocate are more of tech advisers and represent the goodwill of a company";;
+3) echo "Technical writers write nice compelling articles and journals about diffferent aspect of tech careers and events";;
+4) echo "Technical Speaker attends workshop, seminars and events as an educators";;
+5) echo "She needs think of her life where she thinks she really want to fit in";;
+6) unknown=1;;
+	esac
+done
+echo "Nice Using the script to validate your career path"

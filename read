@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "Enter your name before you login for the bash class"
+
+read name
+
+echo "Welcome $name to this evening class"

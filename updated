@@ -1,0 +1,38 @@
+#!/bin/bash
+
+release_file=/etc/os-release
+logfile=/var/log/updater.log
+errorlog=/var/log/updater_errors.log
+
+if grep -q "Centos" $release_file
+then
+	# The host is based on RedHat, run the pacman update command
+	sudo yum update 1>>$logfile 2>>$errorlog
+	if [ $? -ne 0 ]
+	then
+		echo "An error occured, please check the $errorlog file"
+	fi
+
+	sudo yun upgrade -y  1>>$logfile 2>>$errorlog
+	if [$? -ne 0 ]
+	then
+		echo "An error occurred, Please check the $errorlog file"
+	fi
+fi
+
+if grep -q "Kali" $release_file || grep -q "Ubuntu" $release_file
+then
+	# The host is based on Debian
+	# Run the apt Version of the command
+	sudo apt update 1>>$logfile 2>>$errorlog
+	if [ $? -ne 0 ]
+	then
+		echo "An error occured, please check the $errorlog file"
+	fi
+
+	sudo apt upgrade -y 1>>$logfile 2>>$errorlog
+	if [ $? -ne 0 ]
+	then
+		echo "An error occured, please check the $errorlog file"
+	fi
+fi 
